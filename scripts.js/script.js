@@ -1,4 +1,4 @@
-console.log("Connected")
+// console.log("Connected")
 // Store Data By Filtering
 let interviewList = []
 let rejectedList = []
@@ -28,12 +28,13 @@ function calculateCount(){
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
 
-
-    // filteredJobsCount.innerText = filterSection.children.length ;
+    allJobsCount.innerText = allCardSection.children.length;
     
 
     
 }
+
+
 
 // call the function
 calculateCount()
@@ -57,10 +58,15 @@ function toggleStyle(id){
     selected.classList.add('bg-blue-500','text-white')
 
 
+    
+
     if(id == 'Interview-filter-btn'){
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderInterview();
+
+        filteredJobsCount.innerText = interviewList.length;
+
     }
     else if(id == 'all-filter-btn'){
         allCardSection.classList.remove('hidden');
@@ -70,6 +76,8 @@ function toggleStyle(id){
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden');
         renderRejected();
+        filteredJobsCount.innerText = rejectedList.length;
+
     }
 }
 
@@ -103,7 +111,8 @@ mainContainer.addEventListener('click', function(event){
         
 
         }
-    console.log(cardInfo)
+    // console.log(cardI
+
 
     // const applicationExist =  interviewList.find(item => item.jobTitle === cardInfo.jobTitle);
 
